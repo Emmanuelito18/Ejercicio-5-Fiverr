@@ -17,13 +17,14 @@ public class Paciente {
     }
     
     //método constructor inicializado
-    public Paciente(String nif, String nombre, String apellidos, int telefono) {
+    public Paciente(String nif, String nombre, String apellidos, int telefono, LocalDate fechaNacimiento) {
         this.nif = nif;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
     }
-
+    
     public String getNif() {
         return nif;
     }
@@ -55,8 +56,14 @@ public class Paciente {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-    
-    //falta método getter y setter para fechaNacimiento
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
     
     public String toString(){
         String cadena=null;
