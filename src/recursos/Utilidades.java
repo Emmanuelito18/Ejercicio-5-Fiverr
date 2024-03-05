@@ -16,7 +16,7 @@ public class Utilidades extends Paciente{
     public static void limpiaPantalla(){
         
     }
-    public static boolean esValido(String nif){
+    public static boolean esValidoNif(String nif){
         
     }
     public static void mensaje(String texto){
