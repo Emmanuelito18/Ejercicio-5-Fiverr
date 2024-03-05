@@ -110,7 +110,13 @@ public class TestRecetas {
     }
     
     public void mostrarReceta(){
-        
+        System.out.println("Se muestran todas las recetas existentes");
+        for(Receta receta:recetas){
+            if(receta!=null){
+                System.out.println(receta.toString());
+                //muestra por consola la receta en forma de string 
+            }
+        }
     }
     
     public void eliminarReceta(){
