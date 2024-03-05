@@ -69,7 +69,7 @@ public class TestRecetas {
             
             fechaActual=LocalDate.now();//obtengo la fecha actual de la creacion de la receta
             
-            System.out.println("¿Desea ingresar otra receta?");
+            System.out.println("¿Desea ingresar otra receta? (si/no)");
             continuar=teclado.nextLine();
             
             if(formato.equalsIgnoreCase("pastilla")||formato.equalsIgnoreCase("pastillas")){
@@ -111,11 +111,22 @@ public class TestRecetas {
     
     public void eliminarReceta(){
         Scanner teclado=new Scanner(System.in);
-        
         int identificador;
         
         System.out.println("Ingrese el identificador de la receta a eliminar: ");
         identificador=teclado.nextInt();
+        
+        eliminarPosicion(recetas, identificador);
+        
+        // Verifica que el objeto haya sido eliminado
+        for (Receta receta : recetas){
+            //for each que recorre un rango de principio a fin
+            if (receta != null) {
+                System.out.println("Nombre de la receta: " + receta.getNombre()); 
+            } else {
+                System.out.println("La posición está vacía.");
+            }
+        }
     }
     
     public void inicializar(){
@@ -144,7 +155,6 @@ public class TestRecetas {
         if (indice >= 0 && indice < recetas.length) {
             // Verifica si la posición no está vacía
             if (recetas[indice] != null) {
-                //System.out.println("La posición " + posicion + " existe y no está vacía.");
                 System.out.println("¿Cuál campo de la receta "+indice+" quieres modificar?, elige una opción del menú");
                 System.out.println("---Menú---");
                 System.out.println("1.Formato");
@@ -201,5 +211,32 @@ public class TestRecetas {
         }
     }
     
-    
+    public static void eliminarPosicion(Receta[] recetas,int indice){
+        Scanner teclado=new Scanner(System.in);
+        String confirmacion=null;
+
+        // Verifica si la posición está dentro del rango del arreglo
+        if (indice >= 0 && indice < recetas.length) {
+            // Verifica si la posición no está vacía
+            if (recetas[indice] != null) {
+                //System.out.println("La posición " + posicion + " existe y no está vacía.");
+                System.out.println("¿Desea eliminar la receta "+indice+"? (si/no)");
+                confirmacion=teclado.nextLine();
+                if(confirmacion.equalsIgnoreCase("si")){
+                    // Mueve los elementos restantes hacia adelante para llenar el espacio eliminado
+                    for (int i = indice; i < recetas.length - 1; i++) {
+                        recetas[i] = recetas[i + 1];
+                    }
+                    recetas[recetas.length - 1] = null; // Establece el último elemento como null (opcional)
+                    System.out.println("La receta se ha eliminado exitosamente");
+                }else{
+                    System.out.println("La receta no se ha eliminado");
+                }
+            } else {
+                System.out.println("La receta "+indice+" está vácia");
+            }
+        } else {
+            System.out.println("La receta "+indice+" está fuera del rango máximo de recetas(10 recetas)");
+        } 
+    }
 }
