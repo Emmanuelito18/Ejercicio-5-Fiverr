@@ -21,6 +21,33 @@ public class TestRecetas {
     Receta recetas[]=new Receta[numRecetas];
     public static void main(String[] args){
         //Recuerda que si puedes imaginarlo puedes programarlo
+        TestRecetas instancia=new TestRecetas();
+        System.out.println("Sistema de recetas médicas");
+       switch(instancia.menu()){
+            case 1://Crear receta
+                instancia.agregarReceta();
+                break;
+            case 2://Editar receta
+                instancia.modificarReceta();
+                break;
+            case 3://Ver recetas
+                instancia.mostrarReceta();
+                break;
+            case 4://Eliminar recetas
+                instancia.eliminarReceta();
+                break;
+            case 5://Salir
+                System.exit(0);//cierra el programa
+                break;
+            case 6://inicializar recetas
+                System.out.println("Se mostrarán las recetas de prueba\n\n");
+                
+                instancia.inicializar();
+                instancia.mostrarReceta();
+                break;
+            default:
+                System.out.println("Error, opcion inválida");
+        }
        
     }
     
@@ -34,6 +61,9 @@ public class TestRecetas {
         System.out.println("2.Editar receta");
         System.out.println("3.Ver recetass");
         System.out.println("4.Eliminar recetas");
+        System.out.println("5.Salir");
+        
+        System.out.println("\nIngrese su opción: ");
         opcion=teclado.nextByte();
         return opcion;//linea pendiente de revision
     }
@@ -162,7 +192,7 @@ public class TestRecetas {
         recetas[8]=new Receta("9", "Amicdobis",'s', "300mg 1 cada 12 hrs. por 3 días", 1698073, 10, "89012345J", "Juan", "Peréz", 84329651, LocalDate.of(2023, 9, 3));
         recetas[9]=new Receta("10", "Loratadina",'p', "10mg 1 cada 12 hrs.", 1698073, 10, "90123456K", "Emmanuel", "Mejía", 55881079, LocalDate.of(2023, 9, 3));
     }
-    //métodoa personalizado
+    //métodos personalizados
     public static void buscarPosicion(Receta[] recetas, int indice) {//función o método utilizado por modificarReceta
         Scanner teclado=new Scanner(System.in);
         int opcion;
