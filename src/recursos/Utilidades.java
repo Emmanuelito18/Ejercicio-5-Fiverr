@@ -4,22 +4,22 @@ import modeloDatos.Paciente;
 
 public class Utilidades extends Paciente{
     //métodos
-    public int dameEntero(){
+    public static int dameEntero(){
          
     }
-    public short dameShort(){
+    public static short dameShort(){
         
     }
-    public float dameFloat(){
+    public static float dameFloat(){
         
     }
-    public void limpiaPantalla(){
+    public static void limpiaPantalla(){
         
     }
-    public boolean esValido(String nif){
+    public static boolean esValido(String nif){
         
     }
-    public void mensaje(String texto){
+    public static void mensaje(String texto){
         
     }
 }
