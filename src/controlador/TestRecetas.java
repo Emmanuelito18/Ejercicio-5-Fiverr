@@ -26,7 +26,74 @@ public class TestRecetas {
         
     }
     public void agregarReceta(){
+        int i=0;//contador utilizdo para saber el número de iteración del bucle y de receta
+        String continuar=null;//se utiliza para saber si el usuario quiere seguir creado recetas
+        //Estas variables se utilzan para almacenar temporalmente los datos del paciente
+        String identificador=null;
+        String medicamento=null;
+        String formato=null;//se utiliza como auxiliar para el formato del medicamento
+        char formatoLetra;//para guardar el formato del medicamento en letra
+        String psologia=null;
+        String nif=null;
+        String nombre=null;
+        String apellido=null;
+        int telefono;
+        LocalDate fechaActual;
         
+        do{
+            Scanner teclado=new Scanner(System.in);//para ingresar datos por teclado
+            
+            System.out.println("Ingrese el nombre del paciente: ");
+            nombre=teclado.nextLine();
+            
+            System.out.println("Ingrese el apellido del paciente: ");
+            apellido=teclado.nextLine();
+            
+            System.out.println("Ingrese el nif del paciente: ");
+            nif=teclado.nextLine();
+            
+            System.out.println("Ingrese el número de teléfono del paciente: ");
+            telefono=teclado.nextInt();
+            
+            System.out.println("Ingrese el ó los medicamentos recetados: ");
+            medicamento=teclado.nextLine();
+            
+            System.out.println("Ingrese el formato del medicamento (pastilla|inyectable|supocitorio): ");
+            formato=teclado.nextLine();
+            
+            System.out.println("Ingrese la psología(indicaciones) para el paciente:");
+            psologia=teclado.nextLine();
+            
+            fechaActual=LocalDate.now();//obtengo la fecha actual de la creacion de la receta
+            
+            System.out.println("¿Desea ingresar otra receta?");
+            continuar=teclado.nextLine();
+            
+            if(formato.equalsIgnoreCase("pastilla")||formato.equalsIgnoreCase("pastillas")){
+                //Compara sí el formato es pastilla
+                formatoLetra='p';
+            }else if(formato.equalsIgnoreCase("inyectable")){
+                //sí el formato es inyectable
+                formatoLetra='i';
+            }else{
+                //sí el formato es supositorio
+                formatoLetra='s';
+            }
+            /*el método equalsIgnrecase() sirve para comparar si una cadena 
+            de caracteres es igual a otra, sin importar si tiene mayusculas o no*/
+            
+            i++;
+            identificador=String.valueOf(i);//convierte el calor de i de entero a string
+            recetas[i]=new Receta(identificador,medicamento,formatoLetra, psologia, 1698073, i, nif, nombre, apellido, telefono, LocalDate.of(2023, 1, 1));
+            
+            /*
+            debido a que la declaración del objeto teclado de tipo Scanner
+            se hace dentro del bucle, no es necesario poner el método teclado.close();
+            para que se cierre el flujo de entrada asociado al objeto, ya que al dejar se 
+            ser referenciado, el recolector de basura de java en cuanto el objeto deje de ser
+            referenciado
+            */
+        }while(i<=10&&continuar.equals("si")||continuar.equalsIgnoreCase("si"));
     }
     public void modificarReceta(){
         
