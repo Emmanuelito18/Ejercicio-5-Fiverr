@@ -181,6 +181,7 @@ public class TestRecetas {
                         
                         DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                         LocalDate fecha = LocalDate.parse(fechaIngresada, formateador);
+                        //cambia el formato de la fecha de LocalDate
                         
                         recetas[indice].setFechaReceta(fecha);
                         break;
