@@ -19,8 +19,9 @@ public class Receta extends Paciente{
     public Receta() {
     }
 
-    public Receta(String identificador, String medicamento, char formato, String psologia, int numColegiado, int totalRecetas, String nif, String nombre, String apellidos, int telefono) {
-        super(nif, nombre, apellidos, telefono);
+    //Método constructor inicializado
+    public Receta(String identificador, String medicamento, char formato, String psologia, int numColegiado, int totalRecetas, String nif, String nombre, String apellidos, int telefono, LocalDate fechaNacimiento) {
+        super(nif, nombre, apellidos, telefono, fechaNacimiento);
         this.identificador = identificador;
         this.medicamento = medicamento;
         this.formato = formato;
@@ -28,7 +29,7 @@ public class Receta extends Paciente{
         this.numColegiado = numColegiado;
         this.totalRecetas = totalRecetas;
     }
-    
+
     //métodos getter y setters
     public String getIdentificador() {
         return identificador;
@@ -76,6 +77,14 @@ public class Receta extends Paciente{
 
     public void setTotalRecetas(int totalRecetas) {
         this.totalRecetas = totalRecetas;
+    }
+
+    public LocalDate getFechaReceta() {
+        return fechaReceta;
+    }
+
+    public void setFechaReceta(LocalDate fechaReceta) {
+        this.fechaReceta = fechaReceta;
     }
     
 }
