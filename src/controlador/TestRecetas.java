@@ -2,6 +2,7 @@ package controlador;
 
 import java.time.LocalDate;
 import modeloDatos.Receta;
+import java.util.Scanner;
 
 /**
  *
@@ -35,15 +36,16 @@ public class TestRecetas {
     }
     
     public void inicializar(){
-        recetas[0]=new Receta("1", "Cefaclor",'p', "1 cada 8 hrs.", 1698073, 0, "12345678A", "Antonio", "Lewandowski", 0, LocalDate.of(2023, 1, 1));
-        recetas[1]=new Receta("2", "Clamoxin",'p', "1 cada 12 hrs.", 1698073, 0, "87654321B", "Paula", "García", 0, LocalDate.of(2023, 4, 22));
-        recetas[2]=new Receta("3", "Ibuprofeno",'p', "1 cada 8 hrs.", 1698073, 0, "23456789C", "Sergio", "Estrada", 0, LocalDate.of(2023, 6, 3));
-        recetas[3]=new Receta("4", "Metronidasol",'p', "1 cada 12 hrs.", 1698073, 0, "34567890D", "Miguel", "Ortiz", 0, LocalDate.of(2023, 7, 20));
-        recetas[4]=new Receta("5", "Febrax",'p', "1 cada 8 hrs. por 5 días", 1698073, 0, "45678901E", "Lorena", "Laredo", 0, LocalDate.of(2023, 8, 15));
-        recetas[5]=new Receta("6", "Clindamicina",'i', "300ml 1 24 hrs. por  días", 1698073, 0, "56789012F", "Alejandra", "López", 0, LocalDate.of(2023, 8, 31));
-        recetas[6]=new Receta("7", "Pentrexil",'p', "500mg 1 cada 8 hrs.", 1698073, 0, "67890123G", "Marta", "Martinez", 0, LocalDate.of(2023, 9, 1));
-        recetas[7]=new Receta("8", "Amoxicilina",'p', "500mg 1 cada 6 hrs. por 10 días", 1698073, 0, "78901234H", "Pablo", "Escobar", 0, LocalDate.of(2023, 9, 2));
-        recetas[8]=new Receta("9", "Amicdobis",'s', "300mg 1 cada 12 hrs. por 3 días", 1698073, 0, "89012345J", "Juan", "Peréz", 0, LocalDate.of(2023, 9, 3));
-        recetas[9]=new Receta("10", "Loratadina",'p', "10mg 1 cada 12 hrs.", 1698073, 0, "90123456K", "Emmanuel", "Mejía", 0, LocalDate.of(2023, 9, 3));
+        //Los números de los parametros de los objetos son el número de colegiado, el total de recetas y el núméro de telefono del paciente
+        recetas[0]=new Receta("1", "Cefaclor",'p', "1 cada 8 hrs.", 1698073, 1, "12345678A", "Antonio", "Lewandowski", 62495083, LocalDate.of(2023, 1, 1));
+        recetas[1]=new Receta("2", "Clamoxin",'p', "1 cada 12 hrs.", 1698073, 2, "87654321B", "Paula", "García", 73982150, LocalDate.of(2023, 4, 22));
+        recetas[2]=new Receta("3", "Ibuprofeno",'p', "1 cada 8 hrs.", 1698073, 3, "23456789C", "Sergio", "Estrada", 58621430, LocalDate.of(2023, 6, 3));
+        recetas[3]=new Receta("4", "Metronidasol",'p', "1 cada 12 hrs.", 1698073, 4, "34567890D", "Miguel", "Ortiz", 48091763, LocalDate.of(2023, 7, 20));
+        recetas[4]=new Receta("5", "Febrax",'p', "1 cada 8 hrs. por 5 días", 1698073, 5, "45678901E", "Lorena", "Laredo", 36502481, LocalDate.of(2023, 8, 15));
+        recetas[5]=new Receta("6", "Clindamicina",'i', "300ml 1 24 hrs. por  días", 1698073, 6, "56789012F", "Alejandra", "López", 71985634, LocalDate.of(2023, 8, 31));
+        recetas[6]=new Receta("7", "Pentrexil",'p', "500mg 1 cada 8 hrs.", 1698073, 7, "67890123G", "Marta", "Martinez", 20984756, LocalDate.of(2023, 9, 1));
+        recetas[7]=new Receta("8", "Amoxicilina",'p', "500mg 1 cada 6 hrs. por 10 días", 1698073, 8, "78901234H", "Pablo", "Escobar", 57218394, LocalDate.of(2023, 9, 2));
+        recetas[8]=new Receta("9", "Amicdobis",'s', "300mg 1 cada 12 hrs. por 3 días", 1698073, 9, "89012345J", "Juan", "Peréz", 84329651, LocalDate.of(2023, 9, 3));
+        recetas[9]=new Receta("10", "Loratadina",'p', "10mg 1 cada 12 hrs.", 1698073, 10, "90123456K", "Emmanuel", "Mejía", 55881079, LocalDate.of(2023, 9, 3));
     }
 }
