@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class Receta extends Paciente{
     //Atributos
     String identificador;
-    //Espacio para atributo heredado
     String medicamento;
     char formato;//p=pastilla i=inyectable s=supositorio
     String  psologia;
