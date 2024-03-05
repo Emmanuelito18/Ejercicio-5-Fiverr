@@ -22,9 +22,11 @@ public class TestRecetas {
         //Recuerda que si puedes imaginarlo puedes programarlo
        
     }
+    
     public byte menu(){
         
     }
+    
     public void agregarReceta(){
         int i=0;//contador utilizdo para saber el número de iteración del bucle y de receta
         String continuar=null;//se utiliza para saber si el usuario quiere seguir creado recetas
@@ -95,9 +97,15 @@ public class TestRecetas {
             */
         }while(i<=10&&continuar.equals("si")||continuar.equalsIgnoreCase("si"));
     }
+    
     public void modificarReceta(){
+        Scanner teclado=new Scanner(System.in);
+        int identificador;
         
+        System.out.println("Ingrese el identificador de la receta a modificar: ");
+        identificador=teclado.nextInt();
     }
+    
     public void eliminarReceta(){
         
     }
@@ -115,4 +123,5 @@ public class TestRecetas {
         recetas[8]=new Receta("9", "Amicdobis",'s', "300mg 1 cada 12 hrs. por 3 días", 1698073, 10, "89012345J", "Juan", "Peréz", 84329651, LocalDate.of(2023, 9, 3));
         recetas[9]=new Receta("10", "Loratadina",'p', "10mg 1 cada 12 hrs.", 1698073, 10, "90123456K", "Emmanuel", "Mejía", 55881079, LocalDate.of(2023, 9, 3));
     }
+
 }
