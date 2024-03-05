@@ -85,5 +85,9 @@ public class Receta extends Paciente{
     public void setFechaReceta(LocalDate fechaReceta) {
         this.fechaReceta = fechaReceta;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Receta{" + "identificador=" + identificador + ", medicamento=" + medicamento + ", formato=" + formato + ", psologia=" + psologia + ", fechaReceta=" + fechaReceta + ", numColegiado=" + numColegiado + ", totalRecetas=" + totalRecetas + '}';
+    }  
 }
