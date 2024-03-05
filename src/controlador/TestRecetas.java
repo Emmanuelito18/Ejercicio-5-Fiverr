@@ -110,7 +110,12 @@ public class TestRecetas {
     }
     
     public void eliminarReceta(){
+        Scanner teclado=new Scanner(System.in);
         
+        int identificador;
+        
+        System.out.println("Ingrese el identificador de la receta a eliminar: ");
+        identificador=teclado.nextInt();
     }
     
     public void inicializar(){
@@ -126,7 +131,7 @@ public class TestRecetas {
         recetas[8]=new Receta("9", "Amicdobis",'s', "300mg 1 cada 12 hrs. por 3 días", 1698073, 10, "89012345J", "Juan", "Peréz", 84329651, LocalDate.of(2023, 9, 3));
         recetas[9]=new Receta("10", "Loratadina",'p', "10mg 1 cada 12 hrs.", 1698073, 10, "90123456K", "Emmanuel", "Mejía", 55881079, LocalDate.of(2023, 9, 3));
     }
-    //metodo personalizado
+    //métodoa personalizado
     public static void buscarPosicion(Receta[] recetas, int indice) {//función o método utilizado por modificarReceta
         Scanner teclado=new Scanner(System.in);
         int opcion;
@@ -195,4 +200,6 @@ public class TestRecetas {
             System.out.println("La receta "+indice+" está fuera del rango máximo de recetas(10 recetas)");
         }
     }
+    
+    
 }
