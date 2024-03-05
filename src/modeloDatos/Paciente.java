@@ -1,12 +1,14 @@
 package modeloDatos;
 
+import java.time.LocalDate;
+
 public class Paciente {
     //Atributos
     String nif;
     String nombre;
     String apellidos;
     int telefono;
-    //localdate fechaNacimiento;
+    LocalDate fechaNacimiento;//Investigar el uso de esta variable
     
     //métodos
     
