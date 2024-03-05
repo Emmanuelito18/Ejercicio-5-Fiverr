@@ -3,6 +3,7 @@ package controlador;
 import java.time.LocalDate;
 import modeloDatos.Receta;
 import java.util.Scanner;
+import java.time.format.DateTimeFormatter;//para establecer el formato de la fecha
 
 /**
  *
@@ -129,6 +130,10 @@ public class TestRecetas {
     public static void buscarPosicion(Receta[] recetas, int indice) {//función o método utilizado por modificarReceta
         Scanner teclado=new Scanner(System.in);
         int opcion;
+        String formato=null;
+        char formatoLetra;
+        String psologia=null;
+        String fechaIngresada=null;
 
         // Verifica si la posición está dentro del rango del arreglo
         if (indice >= 0 && indice < recetas.length) {
@@ -144,14 +149,40 @@ public class TestRecetas {
                 opcion=teclado.nextInt();
 
                 switch(opcion){
-                    case 1:
-                        //código para modificar el formato
+                    case 1://Formato
+                        System.out.println("Ingrese el nuevo formato del medicamento(pastilla|inyectable|supocitorio): ");
+                        formato=teclado.nextLine();
+                        
+                        if(formato.equalsIgnoreCase("pastilla")||formato.equalsIgnoreCase("pastillas")){
+                            //Compara sí el formato es pastilla
+                            formatoLetra='p';
+                        }else if(formato.equalsIgnoreCase("inyectable")){
+                            //sí el formato es inyectable
+                            formatoLetra='i';
+                        }else{
+                            //sí el formato es supositorio
+                            formatoLetra='s';
+                        }
+                        recetas[indice].setFormato(formatoLetra);
+                        /*llamo al método setFormado para la receta que ocupa el espacio 
+                        especificado en el arreglo de objetos recetas de la clase Receta
+                        */
                         break;
-                    case 2:
-                        //código para modificar la psología
+                    case 2://Psologia
+                        System.out.println("Ingrese la nueva psología (indicaciones): ");
+                        psologia=teclado.nextLine();
+                        recetas[indice].setPsologia(psologia);
                         break;
-                    case 3:
-                        //código para modificar la fecha de la receta
+                    case 3://Fecha de la receta
+                        System.out.println("Ingrese la nueva fecha de la receta en el formato (yyyy-MM-dd)");
+                        System.out.println("Nota: es necesario que incluya los guiones");
+                        System.out.println("Ingrese la nueva fecha: ");
+                        fechaIngresada=teclado.nextLine();
+                        
+                        DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                        LocalDate fecha = LocalDate.parse(fechaIngresada, formateador);
+                        
+                        recetas[indice].setFechaReceta(fecha);
                         break;
                     default:
                         System.out.println("Error, opción inválida");
