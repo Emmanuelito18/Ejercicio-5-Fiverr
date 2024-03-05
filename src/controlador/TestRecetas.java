@@ -109,6 +109,10 @@ public class TestRecetas {
         buscarPosicion(recetas, identificador);
     }
     
+    public void mostrarReceta(){
+        
+    }
+    
     public void eliminarReceta(){
         Scanner teclado=new Scanner(System.in);
         int identificador;
