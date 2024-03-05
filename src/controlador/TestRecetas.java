@@ -104,6 +104,8 @@ public class TestRecetas {
         
         System.out.println("Ingrese el identificador de la receta a modificar: ");
         identificador=teclado.nextInt();
+        
+        buscarPosicion(recetas, identificador);
     }
     
     public void eliminarReceta(){
@@ -123,5 +125,42 @@ public class TestRecetas {
         recetas[8]=new Receta("9", "Amicdobis",'s', "300mg 1 cada 12 hrs. por 3 días", 1698073, 10, "89012345J", "Juan", "Peréz", 84329651, LocalDate.of(2023, 9, 3));
         recetas[9]=new Receta("10", "Loratadina",'p', "10mg 1 cada 12 hrs.", 1698073, 10, "90123456K", "Emmanuel", "Mejía", 55881079, LocalDate.of(2023, 9, 3));
     }
+    //metodo personalizado
+    public static void buscarPosicion(Receta[] recetas, int indice) {//función o método utilizado por modificarReceta
+        Scanner teclado=new Scanner(System.in);
+        int opcion;
 
+        // Verifica si la posición está dentro del rango del arreglo
+        if (indice >= 0 && indice < recetas.length) {
+            // Verifica si la posición no está vacía
+            if (recetas[indice] != null) {
+                //System.out.println("La posición " + posicion + " existe y no está vacía.");
+                System.out.println("¿Cuál campo de la receta "+indice+" quieres modificar?, elige una opción del menú");
+                System.out.println("---Menú---");
+                System.out.println("1.Formato");
+                System.out.println("2.Psología");
+                System.out.println("3.Fecha de la receta");
+
+                opcion=teclado.nextInt();
+
+                switch(opcion){
+                    case 1:
+                        //código para modificar el formato
+                        break;
+                    case 2:
+                        //código para modificar la psología
+                        break;
+                    case 3:
+                        //código para modificar la fecha de la receta
+                        break;
+                    default:
+                        System.out.println("Error, opción inválida");
+                }
+            } else {
+                //System.out.println("La posición " + posicion + " existe pero está vacía.");
+            }
+        } else {
+            //System.out.println("La posición " + posicion + " está fuera del rango del arreglo.");
+        }
+    }
 }
