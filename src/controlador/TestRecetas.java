@@ -25,12 +25,17 @@ public class TestRecetas {
     }
     
     public byte menu(){
+        Scanner teclado=new Scanner(System.in);
+        byte opcion;
+        
         System.out.println("¿Qué desea hacer?");
         System.out.println("---Menú---"); 
         System.out.println("1.Crear receta");
         System.out.println("2.Editar receta");
         System.out.println("3.Ver recetass");
         System.out.println("4.Eliminar recetas");
+        opcion=teclado.nextByte();
+        return opcion;//linea pendiente de revision
     }
     
     public void agregarReceta(){
