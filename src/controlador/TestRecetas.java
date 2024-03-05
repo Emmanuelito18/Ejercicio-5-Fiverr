@@ -1,5 +1,7 @@
 package controlador;
 
+import modeloDatos.Receta;
+
 /**
  *
  * @author Emmanuelito18
