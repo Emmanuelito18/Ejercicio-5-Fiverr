@@ -189,10 +189,10 @@ public class TestRecetas {
                         System.out.println("Error, opción inválida");
                 }
             } else {
-                //System.out.println("La posición " + posicion + " existe pero está vacía.");
+                System.out.println("La receta "+indice+" está vácia");
             }
         } else {
-            //System.out.println("La posición " + posicion + " está fuera del rango del arreglo.");
+            System.out.println("La receta "+indice+" está fuera del rango máximo de recetas(10 recetas)");
         }
     }
 }
