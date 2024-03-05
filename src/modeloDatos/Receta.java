@@ -1,5 +1,7 @@
 package modeloDatos;
 
+import java.time.LocalDate;
+
 public class Receta extends Paciente{
     //Atributos
     String identificador;
@@ -7,7 +9,7 @@ public class Receta extends Paciente{
     String medicamento;
     char formato;//p=pastilla i=inyectable s=supositorio
     String  psologia;
-    //espacio para fecha local
+    LocalDate fechaReceta=LocalDate.now();//obtiene la fecha actual
     int numColegiado;
     int totalRecetas;
     
