@@ -22,33 +22,36 @@ public class TestRecetas {
     public static void main(String[] args){
         //Recuerda que si puedes imaginarlo puedes programarlo
         TestRecetas instancia=new TestRecetas();
-        System.out.println("Sistema de recetas médicas");
-       switch(instancia.menu()){
-            case 1://Crear receta
-                instancia.agregarReceta();
-                break;
-            case 2://Editar receta
-                instancia.modificarReceta();
-                break;
-            case 3://Ver recetas
-                instancia.mostrarReceta();
-                break;
-            case 4://Eliminar recetas
-                instancia.eliminarReceta();
-                break;
-            case 5://Salir
-                System.exit(0);//cierra el programa
-                break;
-            case 6://inicializar recetas
-                System.out.println("Se mostrarán las recetas de prueba\n\n");
-                
-                instancia.inicializar();
-                instancia.mostrarReceta();
-                break;
-            default:
-                System.out.println("Error, opcion inválida");
-        }
-       
+        Scanner teclado=new Scanner(System.in);
+        String respuesta=null;
+        do{
+            System.out.println("Sistema de recetas médicas");
+            switch(instancia.menu()){
+                case 1://Crear receta
+                    instancia.agregarReceta();
+                    break;
+                case 2://Editar receta
+                    instancia.modificarReceta();
+                    break;
+                case 3://Ver recetas
+                    instancia.mostrarReceta();
+                    break;
+                case 4://Eliminar recetas
+                    instancia.eliminarReceta();
+                    break;
+                case 5://Salir
+                    System.exit(0);//cierra el programa
+                    break;
+                case 6://inicializar recetas
+                    System.out.println("Se crearon las recetas de prueba");
+                    instancia.inicializar();
+                    break;
+                default:
+                    System.out.println("Error, opcion inválida");
+            }
+        System.out.println("¿Desea hacer otra cosa? (si/no)");
+        respuesta=teclado.nextLine();
+    }while(respuesta.equalsIgnoreCase("si"));
     }
     
     public byte menu(){
