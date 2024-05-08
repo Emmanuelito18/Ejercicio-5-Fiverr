@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.time.format.DateTimeFormatter;//para establecer el formato de la fecha
 
 /**
- *
+ * Este programa funciona como un registro de recetas médicas para una clínica
  * @author Emmanuelito18
  */
 public class TestRecetas {
