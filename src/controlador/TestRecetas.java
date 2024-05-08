@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;//para establecer el formato de la fec
 /**
  * Este programa funciona como un registro de recetas médicas para una clínica
  * @author Emmanuelito18
+ * 
  */
 public class TestRecetas {
     /**
