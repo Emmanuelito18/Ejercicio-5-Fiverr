@@ -1,7 +1,11 @@
 package recursos;
 
 import modeloDatos.Paciente;
-
+/**
+ * Esta clase se utiliza para hacer funciones que se utilizan 
+ * varias veces en todo el proyecto
+ * @author Emmanuel
+ */
 public class Utilidades extends Paciente{
     //métodos
     /*public static int dameEntero(){//no entiendo para que se necesita este método
